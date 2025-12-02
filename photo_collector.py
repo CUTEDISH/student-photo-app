@@ -101,16 +101,29 @@ if uploaded_file is not None:
                     
                     file_name = f"{stu_class}_{stu_seat}_{stu_name}_{stu_id}.jpg"
                     
+# ... (上面是原本的 download_button)
                     st.download_button(
-                        label="📥 下載處理後的照片",
+                        label="📥 第一步：下載裁切好的照片",
                         data=byte_im,
                         file_name=file_name,
                         mime="image/jpeg"
                     )
+                    
+                    st.success("照片已下載！請務必執行下方第二步。")
+                    
+                    st.markdown("### 👇 第二步：上傳繳交")
+                    st.info("請點擊下方按鈕前往 Google 表單，將剛剛下載的照片上傳繳交。")
+                    
+                    # 請將下方的網址換成您自己的 Google 表單網址
+                    google_form_url = "https://forms.gle/您的Google表單網址"
+                    
+                    st.link_button("🚀 前往 Google 表單繳交照片", google_form_url)
+                    
                 else:
                     st.error(f"❌ {status}")
             except Exception as e:
                 st.error(f"發生錯誤：{str(e)}")
 
+# 把這行原本的隱私聲明移到最下面
 st.markdown("---")
-st.caption("隱私聲明：此程式僅在本地端運作。")
+st.caption("隱私聲明：照片處理過程僅在雲端暫存，下載後即刪除。繳交後照片將儲存於註冊組的 Google Drive。")
