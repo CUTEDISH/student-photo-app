@@ -115,7 +115,7 @@ if uploaded_file is not None:
                     st.info("請點擊下方按鈕前往 Google 表單，將剛剛下載的照片上傳繳交。")
                     
                     # 請將下方的網址換成您自己的 Google 表單網址
-                    google_form_url = "https://forms.gle/您的Google表單網址"
+                    google_form_url = "https://docs.google.com/forms/d/e/1FAIpQLSf-vK55WEznro_lIAT2002xRlRsNDLO-zpnNRk2sj6XBTNWbQ/viewform?usp=publish-editor"
                     
                     st.link_button("🚀 前往 Google 表單繳交照片", google_form_url)
                     
